@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agro Forte - Futuro Sustentável</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:120px 20px;
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header p{
+    font-size:1.2rem;
+    margin-top:10px;
+}
+
+nav{
+    background:#2E7D32;
+    padding:15px;
+    position:sticky;
+    top:0;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+h2{
+    color:#2E7D32;
+    margin-bottom:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    margin-top:20px;
+}
+
+.img{
+    width:100%;
+    border-radius:10px;
+    margin:20px 0;
+}
+
+.quiz{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+button{
+    background:#FBC02D;
+    border:none;
+    padding:10px 20px;
+    cursor:pointer;
+    margin-top:10px;
+    border-radius:5px;
+}
+
+footer{
+    background:#6D4C41;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🌱 Agro Forte: Futuro Sustentável</h1>
+    <p>Equilíbrio entre Produção e Meio Ambiente</p>
+</header>
+
+<nav>
+<ul>
+<li><a href="#agro">Agro Forte</a></li>
+<li><a href="#tecnologia">Tecnologia</a></li>
+<li><a href="#faep">FAEP</a></li>
+<li><a href="#quiz">Quiz</a></li>
+</ul>
+</nav>
+
+<section id="agro">
+<h2>O que é o Agro Forte?</h2>
+
+<img class="img"
+src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854">
+
+<div class="card">
+<p>
+O Agro Forte representa um modelo de desenvolvimento que busca unir alta produtividade agrícola com sustentabilidade ambiental...
+</p>
+</div>
+</section>
+
+<section id="tecnologia">
+<h2>Drones Agrícolas</h2>
+
+<img class="img"
+src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8">
+
+<div class="card">
+<p>
+Os drones agrícolas ajudam no monitoramento das lavouras, identificação de pragas e aplicação localizada de defensivos.
+</p>
+</div>
+
+<h2>Sensores Inteligentes</h2>
+
+<img class="img"
+src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+
+<div class="card">
+<p>
+Os sensores inteligentes monitoram umidade do solo, temperatura e condições climáticas em tempo real.
+</p>
+</div>
+
+<h2>Irrigação Inteligente</h2>
+
+<img class="img"
+src="https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0">
+
+<div class="card">
+<p>
+A irrigação inteligente evita desperdícios de água e melhora a produtividade.
+</p>
+</div>
+</section>
+
+<section id="faep">
+<h2>Importância da FAEP</h2>
+
+<div class="card">
+<p>
+A FAEP apoia produtores rurais, promove capacitação, incentiva inovação e fortalece o agronegócio sustentável.
+</p>
+</div>
+</section>
+
+<section id="quiz">
+<h2>Quiz Agro Forte</h2>
+
+<div class="quiz">
+
+<p><b>1. Qual é o principal objetivo da agricultura sustentável?</b></p>
+<input type="radio" name="q1" value="0"> Desmatar mais<br>
+<input type="radio" name="q1" value="1"> Produzir preservando os recursos naturais<br>
+<input type="radio" name="q1" value="0"> Aumentar desperdícios<br><br>
+
+<p><b>2. Qual tecnologia ajuda a monitorar lavouras?</b></p>
+<input type="radio" name="q2" value="1"> Drone agrícola<br>
+<input type="radio" name="q2" value="0"> Máquina de escrever<br>
+<input type="radio" name="q2" value="0"> Rádio<br><br>
+
+<p><b>3. Uma das funções da FAEP é:</b></p>
+<input type="radio" name="q3" value="0"> Produzir celulares<br>
+<input type="radio" name="q3" value="0"> Construir aeroportos<br>
+<input type="radio" name="q3" value="1"> Capacitar produtores rurais<br><br>
+
+<button onclick="corrigir()">Ver Resultado</button>
+
+<h3 id="resultado"></h3>
+
+</div>
+</section>
+
+<footer>
+🌱 Agro Forte: produzir hoje preservando o amanhã.
+</footer>
+
+<script>
+function corrigir(){
+
+let pontos = 0;
+
+document.querySelectorAll('input[type="radio"]:checked')
+.forEach(item => pontos += Number(item.value));
+
+let mensagem = "";
+
+if(pontos <= 1){
+mensagem = "Continue estudando sobre sustentabilidade no agro.";
+}
+else if(pontos == 2){
+mensagem = "Muito bem! Você conhece o tema.";
+}
+else{
+mensagem = "Parabéns! Você domina o tema Agro Forte e Sustentabilidade!";
+}
+
+document.getElementById("resultado").innerHTML =
+"Pontuação: " + pontos + "/3<br>" + mensagem;
+}
+</script>
+
+</body>
+  </html>
